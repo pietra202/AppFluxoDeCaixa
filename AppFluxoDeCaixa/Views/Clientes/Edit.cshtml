@@ -1,19 +1,14 @@
 ﻿@model AppFluxoDeCaixa.Models.Clientes
-
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Cliente";
 }
 
 <h1 class="display-5 text-light text-center">Editar Cadastro de Clientes</h1>
 
-<h4>Clientes</h4>
 <hr />
+
 <form asp-action="Edit">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-
-
-    <!-- Coluna 1 -->
     <div class="row">
         <div class="col-12 col-md-6 mt-2">
             <input type="hidden" asp-for="ClientesId" />
@@ -22,7 +17,6 @@
                 <input asp-for="ClientesNome" class="form-control" />
                 <span asp-validation-for="ClientesNome" class="text-danger"></span>
             </div>
-
         </div>
 
         <div class="col-12 col-md-2 mt-2">
@@ -32,7 +26,6 @@
                 <option value="J">Jurídica</option>
             </select>
         </div>
-
         <div class="col-12 col-md mt-2">
             <div class="form-group">
                 <label asp-for="CpfCnpj" class="control-label"></label>
@@ -42,9 +35,6 @@
         </div>
     </div>
 
-
-
-    <!-- Coluna 2 -->
     <div class="row">
         <div class="col-12 col-md-8 mt-2">
             <div class="form-group">
@@ -53,8 +43,7 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
         </div>
-
-        <div class=" col-12 col-md mt-2">
+        <div class="col-12 col-md mt-2">
             <div class="form-group">
                 <label asp-for="DataNascFundacao" class="control-label"></label>
                 <input type="date" asp-for="DataNascFundacao" class="form-control" />
@@ -63,9 +52,6 @@
         </div>
     </div>
 
-
-
-    <!-- Coluna 3 -->
     <div class="row">
         <div class="col-12 col-md-3 mt-2">
             <div class="form-group">
@@ -74,7 +60,6 @@
                 <span asp-validation-for="CEP" class="text-danger"></span>
             </div>
         </div>
-
         <div class="col-12 col-md mt-2">
             <div class="form-group">
                 <label asp-for="Logradouro" class="control-label"></label>
@@ -82,19 +67,15 @@
                 <span asp-validation-for="Logradouro" class="text-danger"></span>
             </div>
         </div>
-
         <div class="col-12 col-md-2 mt-2">
-
             <div class="form-group">
                 <label asp-for="Numero" class="control-label"></label>
                 <input asp-for="Numero" class="form-control" />
                 <span asp-validation-for="Numero" class="text-danger"></span>
             </div>
-
         </div>
     </div>
 
-    <!-- Coluna 4 -->
     <div class="row">
         <div class="col-12 col-md mt-2">
             <div class="form-group">
@@ -103,7 +84,6 @@
                 <span asp-validation-for="Bairro" class="text-danger"></span>
             </div>
         </div>
-
         <div class="col-12 col-md mt-2">
             <div class="form-group">
                 <label asp-for="Cidade" class="control-label"></label>
@@ -111,7 +91,6 @@
                 <span asp-validation-for="Cidade" class="text-danger"></span>
             </div>
         </div>
-
         <div class="col-12 col-md-2 mt-2">
             <div class="form-group">
                 <label asp-for="UF" class="control-label"></label>
@@ -119,13 +98,10 @@
                 <span asp-validation-for="UF" class="text-danger"></span>
             </div>
         </div>
-
     </div>
 
-
-    <!-- Coluna 5 -->
     <div class="row">
-        <div class="col-12 col-md mt-2">
+        <div class="col-12 col-md-3 mt-2">
             <div class="form-group">
                 <label asp-for="Celular" class="control-label"></label>
                 <input asp-for="Celular" class="form-control" />
@@ -133,7 +109,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-md mt-2">
+        <div class="col-12 col-md-3 mt-2">
             <div class="form-group">
                 <label asp-for="Telefone" class="control-label"></label>
                 <input asp-for="Telefone" class="form-control" />
@@ -144,51 +120,45 @@
         <div class="col-12 col-md mt-2">
             <div class="form-group">
                 <label asp-for="DataCadastro" class="control-label"></label>
-                <input type="readonly" asp-for="DataCadastro" class="form-control" value=@DateTime.Now.ToString(" yyyy-MM-dd hh:mm:ss") />
+                <input readonly="readonly" asp-for="DataCadastro" class="form-control" />
                 <span asp-validation-for="DataCadastro" class="text-danger"></span>
             </div>
         </div>
 
-
         <div class="col-12 col-md-1 mt-2">
-            <div class="form-group form-check form-switch">
-                <label class="text-end">Ativo?</label>
-                <div class="form-check form-switch form-control-lg">
-                    <input class="form-check-input" type="checkbox" role="switch" asp-for="CadastroAtivo" /> SIM
-                </div>
+            <label class="text-end">Ativo?</label>
+            <div class="form-check form-switch form-control-lg">
+                <input class="form-check-input" type="checkbox" role="switch" asp-for="CadastroAtivo"> SIM
             </div>
         </div>
-
     </div>
 
-
-    <!-- Coluna 6 -->
-    <div class="row">
-        <div class="col-12 col-md mt-2">
+    <div class="row">Finalizada a estilização da página de Editar Cadastro de Clientes
+        <div class="col-12 mt-2">
             <div class="form-group">
-                <label>Observações</label>
-                <textarea class="form-control" id="Observacao" name="Observacao" rows="3"></textarea>
+                <label asp-for="Observacao">Observações</label>
+                <textarea asp-for="Observacao" class="form-control" id="Observacao" name="Observacao" rows="3"></textarea>
             </div>
             <span asp-validation-for="Observacao" class="text-danger"></span>
         </div>
     </div>
 
-    <!-- Coluna 7 -->
-
-    <div class="row ">
-        <div class="col-4 mt-4">
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-success w-100" />
-            </div>
+    <div class="row">
+        <div class="col-4">
+            <a class="btn btn-outline-secondary w-100 mt-4" asp-action="Index">Voltar</a>
         </div>
-
         <div class="col-4">
         </div>
-
-        <div class="col-4 mt-4">
-            <a class="btn btn-secondary w-100" asp-action="Index">Voltar</a>
+        <div class="col-4">
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success w-100 mt-4" />
+            </div>
         </div>
     </div>
-
-
 </form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
